@@ -11,6 +11,10 @@
 		FBF51F3729B1F2D400B16F00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF51F3629B1F2D400B16F00 /* ContentView.swift */; };
 		FBF51F3929B1F2D500B16F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF51F3829B1F2D500B16F00 /* Assets.xcassets */; };
 		FBF51F3D29B1F2D500B16F00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF51F3C29B1F2D500B16F00 /* Preview Assets.xcassets */; };
+		FBF51F4629B1F4D900B16F00 /* SubTool-0-8302662.OBJ in Resources */ = {isa = PBXBuildFile; fileRef = FBF51F4329B1F4D900B16F00 /* SubTool-0-8302662.OBJ */; };
+		FBF51F4729B1F4D900B16F00 /* SubTool-1-13840090.OBJ in Resources */ = {isa = PBXBuildFile; fileRef = FBF51F4429B1F4D900B16F00 /* SubTool-1-13840090.OBJ */; };
+		FBF51F4829B1F4D900B16F00 /* SubTool-2-13840090.OBJ in Resources */ = {isa = PBXBuildFile; fileRef = FBF51F4529B1F4D900B16F00 /* SubTool-2-13840090.OBJ */; };
+		FBF51F4B29B1F74B00B16F00 /* Model3DView in Frameworks */ = {isa = PBXBuildFile; productRef = FBF51F4A29B1F74B00B16F00 /* Model3DView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,9 @@
 		FBF51F3829B1F2D500B16F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBF51F3A29B1F2D500B16F00 /* _DModelDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _DModelDemo.entitlements; sourceTree = "<group>"; };
 		FBF51F3C29B1F2D500B16F00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FBF51F4329B1F4D900B16F00 /* SubTool-0-8302662.OBJ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SubTool-0-8302662.OBJ"; sourceTree = "<group>"; };
+		FBF51F4429B1F4D900B16F00 /* SubTool-1-13840090.OBJ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SubTool-1-13840090.OBJ"; sourceTree = "<group>"; };
+		FBF51F4529B1F4D900B16F00 /* SubTool-2-13840090.OBJ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SubTool-2-13840090.OBJ"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF51F4B29B1F74B00B16F00 /* Model3DView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +60,9 @@
 		FBF51F3329B1F2D400B16F00 /* 3DModelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FBF51F4329B1F4D900B16F00 /* SubTool-0-8302662.OBJ */,
+				FBF51F4429B1F4D900B16F00 /* SubTool-1-13840090.OBJ */,
+				FBF51F4529B1F4D900B16F00 /* SubTool-2-13840090.OBJ */,
 				FBF51F3429B1F2D400B16F00 /* _DModelDemoApp.swift */,
 				FBF51F3629B1F2D400B16F00 /* ContentView.swift */,
 				FBF51F3829B1F2D500B16F00 /* Assets.xcassets */,
@@ -85,6 +96,9 @@
 			dependencies = (
 			);
 			name = 3DModelDemo;
+			packageProductDependencies = (
+				FBF51F4A29B1F74B00B16F00 /* Model3DView */,
+			);
 			productName = 3DModelDemo;
 			productReference = FBF51F3129B1F2D400B16F00 /* 3DModelDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +127,9 @@
 				Base,
 			);
 			mainGroup = FBF51F2829B1F2D400B16F00;
+			packageReferences = (
+				FBF51F4929B1F74B00B16F00 /* XCRemoteSwiftPackageReference "Model3DView" */,
+			);
 			productRefGroup = FBF51F3229B1F2D400B16F00 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +146,9 @@
 			files = (
 				FBF51F3D29B1F2D500B16F00 /* Preview Assets.xcassets in Resources */,
 				FBF51F3929B1F2D500B16F00 /* Assets.xcassets in Resources */,
+				FBF51F4829B1F4D900B16F00 /* SubTool-2-13840090.OBJ in Resources */,
+				FBF51F4629B1F4D900B16F00 /* SubTool-0-8302662.OBJ in Resources */,
+				FBF51F4729B1F4D900B16F00 /* SubTool-1-13840090.OBJ in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +299,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -317,7 +337,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -354,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FBF51F4929B1F74B00B16F00 /* XCRemoteSwiftPackageReference "Model3DView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/frzi/Model3DView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FBF51F4A29B1F74B00B16F00 /* Model3DView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBF51F4929B1F74B00B16F00 /* XCRemoteSwiftPackageReference "Model3DView" */;
+			productName = Model3DView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FBF51F2929B1F2D400B16F00 /* Project object */;
 }
