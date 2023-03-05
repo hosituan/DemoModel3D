@@ -8,63 +8,75 @@
 import SwiftUI
 import Model3DView
 import Combine
-import SceneKit
-
-import SwiftUI
-import SceneKit
-
+import SocketIO
 
 struct ContentView: View {
-    @State var rotation = SCNVector3(x: 0, y: 0, z: 0)
     
+    @StateObject var viewModel = ViewModel()
     var body: some View {
         
         VStack {
-            SceneKitView(rotation: $rotation)
-                .padding()
-            SceneKitView(rotation: $rotation)
-                .padding()
+            Button {
+                DemoSocketManager.shared.connectSocket()
+                subsribe()
+            } label: {
+                Text("Connect Socket")
+            }
+
+            Button {
+                viewModel.camera = OrthographicCamera()
+            } label: {
+                Text("Rotate")
+            }
+            
+            Model3DView(named: "SubTool-0-8302662.OBJ")
+                .cameraControls(OrbitControls(
+                    camera: $viewModel.camera,
+                    sensitivity: 0.5,
+                    friction: 0.1
+                ))
+//            Model3DView(named: "SubTool-0-8302662.OBJ")
+//                .cameraControls(OrbitControls(
+//                    camera: $viewModel.camera2,
+//                    sensitivity: 0.5,
+//                    friction: 0.1
+//                ))
+            
+        }
+        .onAppear {
+            viewModel.subsribe()
+            
         }
     }
-}
-struct SceneKitView: UIViewRepresentable {
-    typealias UIViewType = SCNView
-    @Binding var rotation: SCNVector3
     
-    func makeUIView(context: Context) -> SCNView {
-        let sceneView = SCNView()
-        sceneView.scene = SCNScene(named: "SubTool-0-8302662.OBJ")!
-        sceneView.allowsCameraControl = true
-        sceneView.autoenablesDefaultLighting = true
-        sceneView.backgroundColor = UIColor.white
-        sceneView.frame = CGRect(x: 0, y: 10, width: 0, height: 1)
-        sceneView.delegate = context.coordinator
-        return sceneView
-    }
-    
-    func updateUIView(_ sceneView: SCNView, context: UIViewRepresentableContext<SceneKitView>) {
-        
-    }
-    
-    
-    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
-        print(renderer.pointOfView?.position ?? "")
-        print(renderer.pointOfView?.rotation ?? "")
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    final class Coordinator: NSObject, SCNSceneRendererDelegate {
-        var control: SceneKitView
-
-        init(_ control: SceneKitView) {
-            self.control = control
+    func subsribe() {
+        DemoSocketManager.shared.socket.on("syncPosition") { data, ack in
+            guard let dataInfo = data.first as? [String: Any], let json = dataInfo.jsonStringRepresentation  else { return }
+            do {
+                let result = try JSONDecoder().decode(CameraResponse.self, from: json)
+                print(result)
+                self.viewModel.camera = result.toCamera()
+            }
+            catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
+            }
         }
-
-        func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
-            control.renderer(renderer, didRenderScene: scene, atTime: time)
+    }
+    
+    class ViewModel: ObservableObject {
+        @Published var camera = OrthographicCamera()
+        @Published var camera2 = OrthographicCamera()
+        var subscription = Set<AnyCancellable>()
+        func subsribe() {
+            $camera
+                .debounce(for: 0.5, scheduler: RunLoop.main)
+                .sink { value in
+                    print(value.position)
+                    print(value.rotation)
+                    print(value.near)
+                    print(value.scale)
+//                    self.camera2 = value
+                }.store(in: &subscription)
         }
     }
 }

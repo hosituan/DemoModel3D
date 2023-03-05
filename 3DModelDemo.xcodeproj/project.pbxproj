@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941D040C7454B801700BB5F5 /* Pods_3DModelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A02B7A4577EADFAF429C4A /* Pods_3DModelDemo.framework */; };
+		FB13023129B267C0007D6B63 /* SocketManagerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB13023029B267C0007D6B63 /* SocketManagerDemo.swift */; };
+		FB75EBC429B26762009AA5A3 /* SceneKitUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB75EBC329B26762009AA5A3 /* SceneKitUIKit.swift */; };
 		FBF51F3529B1F2D400B16F00 /* _DModelDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF51F3429B1F2D400B16F00 /* _DModelDemoApp.swift */; };
 		FBF51F3729B1F2D400B16F00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF51F3629B1F2D400B16F00 /* ContentView.swift */; };
 		FBF51F3929B1F2D500B16F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF51F3829B1F2D500B16F00 /* Assets.xcassets */; };
@@ -18,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19A02B7A4577EADFAF429C4A /* Pods_3DModelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_3DModelDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA61F3DE187EA7D91DAE57E0 /* Pods-3DModelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3DModelDemo.release.xcconfig"; path = "Target Support Files/Pods-3DModelDemo/Pods-3DModelDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F7C4EC41B020E789EC750665 /* Pods-3DModelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3DModelDemo.debug.xcconfig"; path = "Target Support Files/Pods-3DModelDemo/Pods-3DModelDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		FB13023029B267C0007D6B63 /* SocketManagerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManagerDemo.swift; sourceTree = "<group>"; };
+		FB13023229B27203007D6B63 /* -DModelDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-DModelDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FB75EBC329B26762009AA5A3 /* SceneKitUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitUIKit.swift; sourceTree = "<group>"; };
 		FBF51F3129B1F2D400B16F00 /* 3DModelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DModelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF51F3429B1F2D400B16F00 /* _DModelDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DModelDemoApp.swift; sourceTree = "<group>"; };
 		FBF51F3629B1F2D400B16F00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,17 +44,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF51F4B29B1F74B00B16F00 /* Model3DView in Frameworks */,
+				941D040C7454B801700BB5F5 /* Pods_3DModelDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A510046A6308F2B197B11D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7C4EC41B020E789EC750665 /* Pods-3DModelDemo.debug.xcconfig */,
+				EA61F3DE187EA7D91DAE57E0 /* Pods-3DModelDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2FFF18CE00CB4533206AC108 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19A02B7A4577EADFAF429C4A /* Pods_3DModelDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBF51F2829B1F2D400B16F00 = {
 			isa = PBXGroup;
 			children = (
 				FBF51F3329B1F2D400B16F00 /* 3DModelDemo */,
 				FBF51F3229B1F2D400B16F00 /* Products */,
+				1A510046A6308F2B197B11D0 /* Pods */,
+				2FFF18CE00CB4533206AC108 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +89,14 @@
 		FBF51F3329B1F2D400B16F00 /* 3DModelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FB13023229B27203007D6B63 /* -DModelDemo-Info.plist */,
 				FBF51F4329B1F4D900B16F00 /* SubTool-0-8302662.OBJ */,
 				FBF51F4429B1F4D900B16F00 /* SubTool-1-13840090.OBJ */,
 				FBF51F4529B1F4D900B16F00 /* SubTool-2-13840090.OBJ */,
 				FBF51F3429B1F2D400B16F00 /* _DModelDemoApp.swift */,
 				FBF51F3629B1F2D400B16F00 /* ContentView.swift */,
+				FB13023029B267C0007D6B63 /* SocketManagerDemo.swift */,
+				FB75EBC329B26762009AA5A3 /* SceneKitUIKit.swift */,
 				FBF51F3829B1F2D500B16F00 /* Assets.xcassets */,
 				FBF51F3A29B1F2D500B16F00 /* _DModelDemo.entitlements */,
 				FBF51F3B29B1F2D500B16F00 /* Preview Content */,
@@ -87,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBF51F4029B1F2D500B16F00 /* Build configuration list for PBXNativeTarget "3DModelDemo" */;
 			buildPhases = (
+				1AD5C423513CCBFA138D14E5 /* [CP] Check Pods Manifest.lock */,
 				FBF51F2D29B1F2D400B16F00 /* Sources */,
 				FBF51F2E29B1F2D400B16F00 /* Frameworks */,
 				FBF51F2F29B1F2D400B16F00 /* Resources */,
+				E536500859D3B08F061D3BE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +188,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1AD5C423513CCBFA138D14E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-3DModelDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E536500859D3B08F061D3BE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-3DModelDemo/Pods-3DModelDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-3DModelDemo/Pods-3DModelDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-3DModelDemo/Pods-3DModelDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FBF51F2D29B1F2D400B16F00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -161,6 +237,8 @@
 			files = (
 				FBF51F3729B1F2D400B16F00 /* ContentView.swift in Sources */,
 				FBF51F3529B1F2D400B16F00 /* _DModelDemoApp.swift in Sources */,
+				FB13023129B267C0007D6B63 /* SocketManagerDemo.swift in Sources */,
+				FB75EBC429B26762009AA5A3 /* SceneKitUIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +356,7 @@
 		};
 		FBF51F4129B1F2D500B16F00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C4EC41B020E789EC750665 /* Pods-3DModelDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,6 +368,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-DModelDemo-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -316,6 +396,7 @@
 		};
 		FBF51F4229B1F2D500B16F00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA61F3DE187EA7D91DAE57E0 /* Pods-3DModelDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +408,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-DModelDemo-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
